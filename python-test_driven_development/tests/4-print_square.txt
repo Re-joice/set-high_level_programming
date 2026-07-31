@@ -1,0 +1,40 @@
+The ``print_square`` function
+=============================
+
+>>> print_square = __import__("4-print_square").print_square
+
+Print a square of size 2.
+
+>>> print_square(2)
+##
+##
+
+Print an empty square.
+
+>>> print_square(0)
+
+Print a square of size 1.
+
+>>> print_square(1)
+#
+
+Negative sizes are invalid.
+
+>>> print_square(-1)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+The size must be an integer.
+
+>>> print_square("2")
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+Negative floats are invalid.
+
+>>> print_square(-3.5)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
