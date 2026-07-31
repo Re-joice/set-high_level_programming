@@ -7,22 +7,25 @@ Print a simple sentence.
 
 >>> text_indentation("Hello. World?")
 Hello.
-
+<BLANKLINE>
 World?
+<BLANKLINE>
 
 Print text with a colon.
 
 >>> text_indentation("Python: is fun.")
 Python:
-
+<BLANKLINE>
 is fun.
+<BLANKLINE>
 
 Leading spaces after punctuation are removed.
 
 >>> text_indentation("Hello.   World.")
 Hello.
-
+<BLANKLINE>
 World.
+<BLANKLINE>
 
 The argument must be a string.
 
