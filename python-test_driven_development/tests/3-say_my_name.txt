@@ -11,7 +11,7 @@ My name is John Smith
 Print with only a first name.
 
 >>> say_my_name("Bob")
-My name is Bob
+My name is Bob 
 
 The first name must be a string.
 
