@@ -3,6 +3,7 @@
 
 import csv
 import json
+import turtle
 
 
 class Base:
@@ -109,7 +110,6 @@ class Base:
         try:
             with open(filename, "r", newline="") as file:
                 reader = csv.reader(file)
-
                 instances = []
 
                 for row in reader:
@@ -135,3 +135,43 @@ class Base:
 
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Open a window and draw all rectangles and squares."""
+        screen = turtle.Screen()
+        screen.title("Almost a Circle - Shapes")
+
+        pen = turtle.Turtle()
+        pen.speed(0)
+        pen.penup()
+
+        for rectangle in list_rectangles:
+            pen.goto(
+                rectangle.x,
+                -rectangle.y
+            )
+            pen.pendown()
+
+            for _ in range(2):
+                pen.forward(rectangle.width)
+                pen.left(90)
+                pen.forward(rectangle.height)
+                pen.left(90)
+
+            pen.penup()
+
+        for square in list_squares:
+            pen.goto(
+                square.x,
+                -square.y
+            )
+            pen.pendown()
+
+            for _ in range(4):
+                pen.forward(square.size)
+                pen.left(90)
+
+            pen.penup()
+
+        turtle.done()
