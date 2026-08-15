@@ -2,7 +2,10 @@
 """State module."""
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
-from model_state import Base
+from sqlalchemy.ext.declarative import declarative_base
+
+
+Base = declarative_base()
 
 
 class State(Base):
@@ -14,6 +17,6 @@ class State(Base):
 
     cities = relationship(
         "City",
-        cascade="all, delete, delete-orphan",
+        cascade="all, delete-orphan",
         back_populates="state"
     )
