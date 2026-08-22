@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""Fetch and display the status of the ALX intranet webpage."""
+"""Fetch and display the status of a web server."""
 
 from urllib import request
 
 
 if __name__ == "__main__":
-    with request.urlopen("https://intranet.hbtn.io/status") as response:
+    with request.urlopen("http://0.0.0.0:5050/status") as response:
         body = response.read()
         print("Body response:")
         print("\t- type:", type(body))
