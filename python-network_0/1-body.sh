@@ -1,3 +1,3 @@
 #!/bin/bash
-# Displays the response body only when the server returns a 200 status code.
-curl -s -w "%{http_code}" "$1" | sed 's/200$//'
+# Displays the response body only when the HTTP status code is 200.
+curl -s -o /dev/null -w "%{http_code}" "$1" | grep -q '^200$' && curl -s "$1"
